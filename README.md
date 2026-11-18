@@ -48,10 +48,6 @@ Assets/ProjectMercator/
 Unity 6 (6000.0.68f1), HDRP 17.0.4, C#, Input System, Shader Graph, VFX Graph,
 ScriptableObject-конфигурация, Git.
 
-## Сторонние ассеты
-
-- `Assets/Plugins/VolumetricLightBeam` — плагин объёмных лучей (сторонний, не мой код).
-
 ## Известные ограничения
 
 - Одна сцена (`DevelopScene`), без билда в репозитории: проект запускается из редактора Unity 6.
