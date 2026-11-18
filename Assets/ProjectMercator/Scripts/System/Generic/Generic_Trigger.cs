@@ -1,8 +1,8 @@
-using UnityEngine;
+п»їusing UnityEngine;
 
 /// <summary>
-/// Базовый класс, который внутри реализует OnTriggerEnter/OnTriggerExit, его методы возвращают GameObject. 
-/// Можно засекать объекты с интерфейсами или по слою, переключается коллекцией TriggerType_Enum
+/// Р‘Р°Р·РѕРІС‹Р№ РєР»Р°СЃСЃ, РєРѕС‚РѕСЂС‹Р№ РІРЅСѓС‚СЂРё СЂРµР°Р»РёР·СѓРµС‚ OnTriggerEnter/OnTriggerExit, РµРіРѕ РјРµС‚РѕРґС‹ РІРѕР·РІСЂР°С‰Р°СЋС‚ GameObject. 
+/// РњРѕР¶РЅРѕ Р·Р°СЃРµРєР°С‚СЊ РѕР±СЉРµРєС‚С‹ СЃ РёРЅС‚РµСЂС„РµР№СЃР°РјРё РёР»Рё РїРѕ СЃР»РѕСЋ, РїРµСЂРµРєР»СЋС‡Р°РµС‚СЃСЏ РєРѕР»Р»РµРєС†РёРµР№ TriggerType_Enum
 /// </summary>
 public abstract class Trigger : MonoBehaviour
 {
@@ -11,29 +11,29 @@ public abstract class Trigger : MonoBehaviour
     [SerializeField] protected LayerMask _targetLayer;
     [SerializeField] protected string _interfaceName;
     /// <summary>
-    /// Метод на вход в триггер, реализуется базовым OnTriggerEnter, возвращает GameObject
+    /// РњРµС‚РѕРґ РЅР° РІС…РѕРґ РІ С‚СЂРёРіРіРµСЂ, СЂРµР°Р»РёР·СѓРµС‚СЃСЏ Р±Р°Р·РѕРІС‹Рј OnTriggerEnter, РІРѕР·РІСЂР°С‰Р°РµС‚ GameObject
     /// </summary>
     /// <param name="anyObject"></param>
     protected abstract void OnEnter(GameObject anyObject);
     /// <summary>
-    /// метод на выход из триггера, реализуется базовым OnTriggerExit, возвращает GameObject
+    /// РјРµС‚РѕРґ РЅР° РІС‹С…РѕРґ РёР· С‚СЂРёРіРіРµСЂР°, СЂРµР°Р»РёР·СѓРµС‚СЃСЏ Р±Р°Р·РѕРІС‹Рј OnTriggerExit, РІРѕР·РІСЂР°С‰Р°РµС‚ GameObject
     /// </summary>
     /// <param name="anyObject"></param>
     protected abstract void OnExit(GameObject anyObject);
     /// <summary>
-    /// метод на нахождение в триггере, реализуется базовым OnTriggerStay, возвращает GameObject
+    /// РјРµС‚РѕРґ РЅР° РЅР°С…РѕР¶РґРµРЅРёРµ РІ С‚СЂРёРіРіРµСЂРµ, СЂРµР°Р»РёР·СѓРµС‚СЃСЏ Р±Р°Р·РѕРІС‹Рј OnTriggerStay, РІРѕР·РІСЂР°С‰Р°РµС‚ GameObject
     /// </summary>
     /// <param name="anyObject"></param>
     protected virtual void OnStay(GameObject anyObject) { }
 
     /// <summary>
-    /// Взависимости от выбраного имени в коллекции будет проверяться интерфейс или слой
+    /// Р’Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ РІС‹Р±СЂР°РЅРѕРіРѕ РёРјРµРЅРё РІ РєРѕР»Р»РµРєС†РёРё Р±СѓРґРµС‚ РїСЂРѕРІРµСЂСЏС‚СЊСЃСЏ РёРЅС‚РµСЂС„РµР№СЃ РёР»Рё СЃР»РѕР№
     /// </summary>
     /// <param name="other"></param>
     /// <returns></returns>
     protected bool IsValidTarget(GameObject other)
     {
-        // Основная проверка по типу
+        // РћСЃРЅРѕРІРЅР°СЏ РїСЂРѕРІРµСЂРєР° РїРѕ С‚РёРїСѓ
         return _triggerType switch
         {
             TriggerType_Enum.LayerMask => ValidateLayerMask(other),

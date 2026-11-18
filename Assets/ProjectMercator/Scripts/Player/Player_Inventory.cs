@@ -1,4 +1,4 @@
-using UnityEngine;
+п»їusing UnityEngine;
 
 public class Player_Inventory : MonoBehaviour
 {
@@ -36,6 +36,6 @@ public class Player_Inventory : MonoBehaviour
     public void GetCrystalInInventory(int incomingCrystal)
     {
         _crystalCount += incomingCrystal;
-        Debug.Log($"Кристалл подобран, текущее количество кристаллов {_crystalCount}");
+        Debug.Log($"РљСЂРёСЃС‚Р°Р»Р» РїРѕРґРѕР±СЂР°РЅ, С‚РµРєСѓС‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РєСЂРёСЃС‚Р°Р»Р»РѕРІ {_crystalCount}");
     }
 }

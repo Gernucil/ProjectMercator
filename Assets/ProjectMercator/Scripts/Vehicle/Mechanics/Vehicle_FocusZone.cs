@@ -1,18 +1,18 @@
-using System;
+п»їusing System;
 using UnityEngine;
 /// <summary>
-/// При нажатии клавиши, отвечающаю за Interacting, плавно переводит и поворачивает камеру на нужную точку в мире
+/// РџСЂРё РЅР°Р¶Р°С‚РёРё РєР»Р°РІРёС€Рё, РѕС‚РІРµС‡Р°СЋС‰Р°СЋ Р·Р° Interacting, РїР»Р°РІРЅРѕ РїРµСЂРµРІРѕРґРёС‚ Рё РїРѕРІРѕСЂР°С‡РёРІР°РµС‚ РєР°РјРµСЂСѓ РЅР° РЅСѓР¶РЅСѓСЋ С‚РѕС‡РєСѓ РІ РјРёСЂРµ
 /// </summary>
 public class Vehicle_FocusZone : MonoBehaviour, IInteractable
 {
         
     [SerializeField] private Transform _cameraPoint;
-    [SerializeField, Tooltip("Дистанция для взаимодействия")] private float _distanceInteracting;
+    [SerializeField, Tooltip("Р”РёСЃС‚Р°РЅС†РёСЏ РґР»СЏ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ")] private float _distanceInteracting;
     [SerializeField] private AnimationCurve _moveSpeedCameraCurve;
     [SerializeField] private float _moveSpeedCameraDuration;
 
     [SerializeField] private float _moveSpeedCameraTime;
-    private float t; // переменная от 0 до 1 для интерполяции, применяется в проверках, чтобы перемещение занимало ровно столько времени, сколько записано в _moveSpeedCameraDuration
+    private float t; // РїРµСЂРµРјРµРЅРЅР°СЏ РѕС‚ 0 РґРѕ 1 РґР»СЏ РёРЅС‚РµСЂРїРѕР»СЏС†РёРё, РїСЂРёРјРµРЅСЏРµС‚СЃСЏ РІ РїСЂРѕРІРµСЂРєР°С…, С‡С‚РѕР±С‹ РїРµСЂРµРјРµС‰РµРЅРёРµ Р·Р°РЅРёРјР°Р»Рѕ СЂРѕРІРЅРѕ СЃС‚РѕР»СЊРєРѕ РІСЂРµРјРµРЅРё, СЃРєРѕР»СЊРєРѕ Р·Р°РїРёСЃР°РЅРѕ РІ _moveSpeedCameraDuration
 
     private Quaternion _cameraLookPosition;
     private Camera _playerCamera;
@@ -114,8 +114,8 @@ public class Vehicle_FocusZone : MonoBehaviour, IInteractable
     }
 
 
-    // кусок кода позволяющий получить мировые координаты с помощью рэйкаста из нужной точки
-    // в этом случае это нужно для того, чтобы правильно соориентировать камеру в пространстве, чтобы смотрела под правильным углом и в нужную точку
+    // РєСѓСЃРѕРє РєРѕРґР° РїРѕР·РІРѕР»СЏСЋС‰РёР№ РїРѕР»СѓС‡РёС‚СЊ РјРёСЂРѕРІС‹Рµ РєРѕРѕСЂРґРёРЅР°С‚С‹ СЃ РїРѕРјРѕС‰СЊСЋ СЂСЌР№РєР°СЃС‚Р° РёР· РЅСѓР¶РЅРѕР№ С‚РѕС‡РєРё
+    // РІ СЌС‚РѕРј СЃР»СѓС‡Р°Рµ СЌС‚Рѕ РЅСѓР¶РЅРѕ РґР»СЏ С‚РѕРіРѕ, С‡С‚РѕР±С‹ РїСЂР°РІРёР»СЊРЅРѕ СЃРѕРѕСЂРёРµРЅС‚РёСЂРѕРІР°С‚СЊ РєР°РјРµСЂСѓ РІ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРµ, С‡С‚РѕР±С‹ СЃРјРѕС‚СЂРµР»Р° РїРѕРґ РїСЂР°РІРёР»СЊРЅС‹Рј СѓРіР»РѕРј Рё РІ РЅСѓР¶РЅСѓСЋ С‚РѕС‡РєСѓ
 #if UNITY_EDITOR
     [ExecuteInEditMode]
     private void OnDrawGizmos()

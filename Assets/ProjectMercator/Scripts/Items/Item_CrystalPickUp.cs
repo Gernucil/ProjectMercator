@@ -1,11 +1,11 @@
-using UnityEngine;
+п»їusing UnityEngine;
 
 public class Item_CrystalPickUp : MonoBehaviour, IInteractable
 {
     public void Interact(GameObject interacting)
     {
         var inventory = interacting.GetComponent<Player_Inventory>();
-        inventory.GetCrystalInInventory(1); // передаём чисто единицу, потому что при подборе кристалл то один, логично? логично
+        inventory.GetCrystalInInventory(1); // РїРµСЂРµРґР°С‘Рј С‡РёСЃС‚Рѕ РµРґРёРЅРёС†Сѓ, РїРѕС‚РѕРјСѓ С‡С‚Рѕ РїСЂРё РїРѕРґР±РѕСЂРµ РєСЂРёСЃС‚Р°Р»Р» С‚Рѕ РѕРґРёРЅ, Р»РѕРіРёС‡РЅРѕ? Р»РѕРіРёС‡РЅРѕ
         gameObject.SetActive(false);
     }
 }

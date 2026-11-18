@@ -1,10 +1,10 @@
-using System;
+п»їusing System;
 using Unity.Burst;
 using UnityEngine;
 
 public class Vehicle_Lever : MonoBehaviour, IMouseInteractable
 {
-    [Header("Настройки рачага")] // Возможно стоит их вывести в ScriptableObject
+    [Header("РќР°СЃС‚СЂРѕР№РєРё СЂР°С‡Р°РіР°")] // Р’РѕР·РјРѕР¶РЅРѕ СЃС‚РѕРёС‚ РёС… РІС‹РІРµСЃС‚Рё РІ ScriptableObject
     [SerializeField] private float sensitivity;
     [SerializeField] private float _minAngleActionCap;
     [SerializeField] private float _maxAngle;
@@ -44,7 +44,7 @@ public class Vehicle_Lever : MonoBehaviour, IMouseInteractable
 
 
 
-    //методы из интерфейса IMouseInteractable, пока функционала нет по причине ненадобности
+    //РјРµС‚РѕРґС‹ РёР· РёРЅС‚РµСЂС„РµР№СЃР° IMouseInteractable, РїРѕРєР° С„СѓРЅРєС†РёРѕРЅР°Р»Р° РЅРµС‚ РїРѕ РїСЂРёС‡РёРЅРµ РЅРµРЅР°РґРѕР±РЅРѕСЃС‚Рё
     public void MouseEnter(Vector2 mousePositionIn) { }
     public void MouseExit(Vector2 mousePositionOut) { }
 }

@@ -1,13 +1,13 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using UnityEngine.VFX;
 
 public class Vehicle_StartMoving : MonoBehaviour, IInteractable
 {
-    [Header("Управление текстурой снега на земле")]
+    [Header("РЈРїСЂР°РІР»РµРЅРёРµ С‚РµРєСЃС‚СѓСЂРѕР№ СЃРЅРµРіР° РЅР° Р·РµРјР»Рµ")]
     [SerializeField] private Material _groundTexture;
     [SerializeField] private float _speedLimit;
     [SerializeField, Min(0.1f)] private float _gainSpeed;
-    [Header("Управление частицами снега")]
+    [Header("РЈРїСЂР°РІР»РµРЅРёРµ С‡Р°СЃС‚РёС†Р°РјРё СЃРЅРµРіР°")]
     [SerializeField] private VisualEffect _snowFall;
     [SerializeField] private float _directionLimit;    
     [SerializeField] private float _particleSpeedLimit;

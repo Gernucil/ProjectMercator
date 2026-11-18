@@ -1,25 +1,25 @@
-using UnityEngine;
+п»їusing UnityEngine;
 
 [CreateAssetMenu(fileName = "VehicleSettings", menuName = "Scriptable Objects/VehicleSettings")]
 public class VehicleSettings : ScriptableObject
 {
-    [Header("Давление и его настройки")]
+    [Header("Р”Р°РІР»РµРЅРёРµ Рё РµРіРѕ РЅР°СЃС‚СЂРѕР№РєРё")]
     public int PressureMax = 0;
     public int PressureMaxDeadZone = 0;
     public int PressureMinDeadZone = 0;
     public int PressureBuildupRate = 0;
     public int PressureStartingNumber = 0;
-    [Header("Температура и её настройки")]
+    [Header("РўРµРјРїРµСЂР°С‚СѓСЂР° Рё РµС‘ РЅР°СЃС‚СЂРѕР№РєРё")]
     public float TemperatureMax = 0;
     public float TemperatureMin = 0;
     public float TemperatureMaxDeadZone = 0;
     public float TemperatureMinDeadZone = 0;
     public float TemperatureBuildupRate = 0;
-    [Header("Ввод координат и его настройки")]
+    [Header("Р’РІРѕРґ РєРѕРѕСЂРґРёРЅР°С‚ Рё РµРіРѕ РЅР°СЃС‚СЂРѕР№РєРё")]
     public int CoordinateInputFrequency = 0;
-    [Header("Уборка снега и его настройки")]
+    [Header("РЈР±РѕСЂРєР° СЃРЅРµРіР° Рё РµРіРѕ РЅР°СЃС‚СЂРѕР№РєРё")]
      
-    [Header("Модификатор сложности механик")]
+    [Header("РњРѕРґРёС„РёРєР°С‚РѕСЂ СЃР»РѕР¶РЅРѕСЃС‚Рё РјРµС…Р°РЅРёРє")]
     public int DifficultMultiply = 0;
     
 }

@@ -1,11 +1,11 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 
 public static class EventBus
 {
     private static readonly Dictionary<Type, Delegate> _listeners = new();
 
-    // Подписка
+    // РџРѕРґРїРёСЃРєР°
     public static void Subscribe<T>(Action<T> listener)
     {
         var type = typeof(T);
@@ -19,7 +19,7 @@ public static class EventBus
         }
     }
 
-    // Отписка
+    // РћС‚РїРёСЃРєР°
     public static void Unsubscribe<T>(Action<T> listener)
     {
         var type = typeof(T);
@@ -27,7 +27,7 @@ public static class EventBus
         {
             _listeners[type] = Delegate.Remove(_listeners[type], listener);
 
-            // Если слушателей не осталось, удаляем ключ
+            // Р•СЃР»Рё СЃР»СѓС€Р°С‚РµР»РµР№ РЅРµ РѕСЃС‚Р°Р»РѕСЃСЊ, СѓРґР°Р»СЏРµРј РєР»СЋС‡
             if (_listeners[type] == null)
             {
                 _listeners.Remove(type);
@@ -35,7 +35,7 @@ public static class EventBus
         }
     }
 
-    // Сюда суём класс с данными буквально EventBus.Publish(new UIEvent { bool = true}) - for example
+    // РЎСЋРґР° СЃСѓС‘Рј РєР»Р°СЃСЃ СЃ РґР°РЅРЅС‹РјРё Р±СѓРєРІР°Р»СЊРЅРѕ EventBus.Publish(new UIEvent { bool = true}) - for example
     public static void Publish<T>(T eventData)
     {
         var type = typeof(T);

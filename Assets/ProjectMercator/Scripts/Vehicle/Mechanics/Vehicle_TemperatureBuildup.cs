@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using UnityEngine;
 
 public class Vehicle_TemperatureBuildup : MonoBehaviour
@@ -24,7 +24,7 @@ public class Vehicle_TemperatureBuildup : MonoBehaviour
         _temperatureBuildupRate = _vehicleSettings.TemperatureBuildupRate;
         _difficultModifier = _vehicleSettings.DifficultMultiply;
         
-        _currentTemperature = _temperatureMax / 2; // Задаём текущее давление, чтобы оно не находилось ни в одном из пределов
+        _currentTemperature = _temperatureMax / 2; // Р—Р°РґР°С‘Рј С‚РµРєСѓС‰РµРµ РґР°РІР»РµРЅРёРµ, С‡С‚РѕР±С‹ РѕРЅРѕ РЅРµ РЅР°С…РѕРґРёР»РѕСЃСЊ РЅРё РІ РѕРґРЅРѕРј РёР· РїСЂРµРґРµР»РѕРІ
     }
 
     

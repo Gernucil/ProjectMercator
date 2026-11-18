@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using UnityEngine;
 using UnityEngine.Windows;
 
@@ -46,21 +46,21 @@ public class Player_Input : MonoBehaviour
 
     private void Subscribe()
     {
-        // ñîáûòèÿ íà ïåðåäâèæåíèå
+        // ÑÐ¾Ð±Ñ‹Ñ‚Ð¸Ñ Ð½Ð° Ð¿ÐµÑ€ÐµÐ´Ð²Ð¸Ð¶ÐµÐ½Ð¸Ðµ
         input.Player.Move.performed += ctx => _moveInput = ctx.ReadValue<Vector2>(); 
         input.Player.Move.canceled += ctx => _moveInput = Vector2.zero;
-        // ñîáûòèÿ íà ïåðåìåùåíèå ìûøêè
+        // ÑÐ¾Ð±Ñ‹Ñ‚Ð¸Ñ Ð½Ð° Ð¿ÐµÑ€ÐµÐ¼ÐµÑ‰ÐµÐ½Ð¸Ðµ Ð¼Ñ‹ÑˆÐºÐ¸
         input.Player.Look.performed += ctx => cameraMove.RotateCamera(ctx.ReadValue<Vector2>()); 
         input.Player.Look.canceled += ctx => cameraMove.RotateCamera(Vector2.zero);
-        // ñîáûòèå íà âçàèìîäåéñòâèå
+        // ÑÐ¾Ð±Ñ‹Ñ‚Ð¸Ðµ Ð½Ð° Ð²Ð·Ð°Ð¸Ð¼Ð¾Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ
         input.Player.Interact.performed += ctx => interact.PerformInteract();
         input.Player.MouseInteraction.started += ctx => _isMouseInteracting = true;
         input.Player.MouseInteraction.canceled += ctx => _isMouseInteracting = false;
         input.Player.MousePosition.performed += ctx => _mouseDelta = ctx.ReadValue<Vector2>();
         
-        // ñîáûòèå íà îòìåíó âçàèìîäåéñòâèÿ
+        // ÑÐ¾Ð±Ñ‹Ñ‚Ð¸Ðµ Ð½Ð° Ð¾Ñ‚Ð¼ÐµÐ½Ñƒ Ð²Ð·Ð°Ð¸Ð¼Ð¾Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ
         input.Player.Return.performed += ctx => interact.CancelInteract(ctx.performed);
-        // ñîáûòèå íà äðîï ïðåäìåòà
+        // ÑÐ¾Ð±Ñ‹Ñ‚Ð¸Ðµ Ð½Ð° Ð´Ñ€Ð¾Ð¿ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°
         input.Player.DropItem.performed += ctx => inventory.DropItem();
     }
 
